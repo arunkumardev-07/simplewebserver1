@@ -24,90 +24,83 @@ Testing the webserver.
 ## PROGRAM:
 ```
 from http.server import HTTPServer, BaseHTTPRequestHandler
-# HTML content to serve
-content = """
-<!doctype html>
+content="""
+<!DOCTYPE html>
+
 <html>
 <head>
-<title>My Web Server</title>
+    <title>TCP/IP Protocol Suite</title>
+    <style>
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+            font-style:normal;
+            color: #ffffff;
+        }
+        th, td {
+            border: 1px solid #ffffff;
+            padding: 20px;
+            font-size: 22px;
+            text-align: center;
+        }
+        th {
+            background-color: #4CAF50;
+            color: rgb(0, 0, 0);
+            font-size: 30px;
+        }
+        
+        h1{
+            color :#4CAF50;
+            text-align: center;
+            font-size: 60px;
+        }
+        body{
+            background: #181717;
+        }
+    </style>
 </head>
 <body>
-<center><h1>TCP/IP PROTOCOLS</h1></center><br>
-<h3>
-1. Application Layer Protocols - HTTP, FTP, DNS<br>
-2. Transport Layer Protocols - TCP/UDP<br>
-3. Internet Layer Protocols - IPv4/IPv6<br>
-4. Link Layer Protocols - MAC<br>
-</h3>
+
+    <h1>TCP/IP Protocol Suite</h1>
+
+    <table>
+        <tr>
+            <th>LAYER</th>
+            <th>PROTOCOLS (EXAMPLES)</th>
+            <th>FUNCTION</th>
+        </tr>
+        <tr>
+            <td>Application Layer</td>
+            <td>HTTP, HTTPS, FTP, SMTP, DNS, DHCP</td>
+            <td>Provides network services to applications</td>
+        </tr>
+        <tr>
+            <td>Transport Layer</td>
+            <td>TCP, UDP</td>
+            <td>Manages end-to-end communication</td>
+        </tr>
+        <tr>
+            <td>Internet Layer</td>
+            <td>IP (IPv4, IPv6), ICMP, ARP, IGMP</td>
+            <td>Handles addressing and routing</td>
+        </tr>
+        <tr>
+            <td>Network Access Layer</td>
+            <td>Ethernet, Wi-Fi, PPP, SLIP</td>
+            <td>Manages physical data transmission</td>
+        </tr>
+    </table>
+
 </body>
 </html>
-"""
-class MyHandler(BaseHTTPRequestHandler):
-    def do_GET(self):
-        self.send_response(200)
-        self.send_header("Content-type", "text/html")
-        self.end_headers()
-        self.wfile.write(content.encode())
-
-# Set up and run the server
-def run(server_class=HTTPServer, handler_class=MyHandler, port=8000):
-    server_address = ('', port)
-    httpd = server_class(server_address, handler_class)
-    print(f"Serving HTTP on port {port}...")
-    httpd.serve_forever()
-
-# Run the server
-if __name__ == '__main__':
-    run()
-content = """
-<html>
-<head>
-<title>Top five software companies in revenue</title>
-</head>
-<body>
-<h1 align="center">
-TOP FIVE SOFTWARE COMPANIES IN REVENUE</h1>
-<table align="center" border="2" cellspacing="5" cellpadding="5" width="800" height="500">
-<tr>
-<th>RANK</th>
-<th>COMPANY NAME</th>
-<th>REVENUE</th>
-</tr>
-<tr>
-<td>1</td>
-<td>Apple(AAPL)</td>
-<td>$385.70 B </td>
-</tr>
-<tr>
-<td>2</td>
-<td>Alphabet(Google)</td>
-<td>$307.39 B</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Microsoft</td>
-<td>$227.58 B</td>
-</tr>
-<tr>
-<td>4</td>
-<td>Ibm</td>
-<td>$61.85 B</td>
-</tr>
-<tr>
-<td>5</td>
-<td>Oracle</td>
-<td>$51.62 B</td>
-</tr>
-</table>
-</body>
-</html>
-
 """
 class myhandler(BaseHTTPRequestHandler):
     def do_GET(self):
         print("request received")
         self.send_response(200)
-        self.send_header('content-type', 'text/html; charset=utf-8')
+        self.send_header('content-type','text/html; charset=utf-8')
         self.end_headers()
         self.wfile.write(content.encode())
 server_address = ('',8000)
