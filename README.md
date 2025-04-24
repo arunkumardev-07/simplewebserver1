@@ -31,34 +31,7 @@ content="""
 <head>
     <title>TCP/IP Protocol Suite</title>
     <style>
-        table {
-            width: 80%;
-            border-collapse: collapse;
-            margin: 20px auto;
-            font-family: Arial, sans-serif;
-            font-style:normal;
-            color: #ffffff;
-        }
-        th, td {
-            border: 1px solid #ffffff;
-            padding: 20px;
-            font-size: 22px;
-            text-align: center;
-        }
-        th {
-            background-color: #4CAF50;
-            color: rgb(0, 0, 0);
-            font-size: 30px;
-        }
         
-        h1{
-            color :#4CAF50;
-            text-align: center;
-            font-size: 60px;
-        }
-        body{
-            background: #181717;
-        }
     </style>
 </head>
 <body>
